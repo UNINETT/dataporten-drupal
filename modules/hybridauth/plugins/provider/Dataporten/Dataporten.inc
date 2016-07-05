@@ -9,7 +9,6 @@
  */
 $plugin = array(
   'configuration_form_callback' => 'hybridauth_provider_dataporten_configuration_form_callback',
-  'configuration_callback' => 'hybridauth_provider_dataporten_configuration_callback',
 );
 
 function hybridauth_provider_dataporten_configuration_form_callback(&$form, $provider_id) {
@@ -30,8 +29,4 @@ function hybridauth_provider_dataporten_configuration_form_callback(&$form, $pro
   $app_settings['hybridauth_provider_' . $provider_id . '_keys_secret']['#title'] = t('Client Secret');
 
 
-}
-
-function hybridauth_provider_dataporten_configuration_callback(&$config, $provider_id) {
-  $config['scope'] = variable_get('hybridauth_provider_' . $provider_id . '_scope', 'read');
 }
